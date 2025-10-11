@@ -1,0 +1,70 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  publish:
+    name: Publish SDK to npm
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build SDK
+        run: |
+          cd packages/fhevm-sdk
+          npm run build
+
+      - name: Run tests
+        run: |
+          cd packages/fhevm-sdk
+          npm test --if-present
+
+      - name: Check version
+        run: |
+          cd packages/fhevm-sdk
+          npm version ${{ github.event.inputs.version || 'patch' }} --no-git-tag-version
+
+      - name: Publish to npm
+        run: |
+          cd packages/fhevm-sdk
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create Git tag
+        run: |
+          VERSION=$(node -p "require('./packages/fhevm-sdk/package.json').version")
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add packages/fhevm-sdk/package.json
+          git commit -m "chore: release v${VERSION}"
+          git tag "v${VERSION}"
+          git push origin main --tags
