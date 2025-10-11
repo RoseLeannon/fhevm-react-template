@@ -1,1 +1,76 @@
+name: Deploy Examples
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-nextjs-showcase:
+    name: Deploy Next.js Showcase to Vercel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build SDK
+        run: |
+          cd packages/fhevm-sdk
+          npm run build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_SHOWCASE_PROJECT_ID }}
+          working-directory: ./examples/nextjs-showcase
+          vercel-args: '--prod'
+
+  deploy-traffic-analytics:
+    name: Deploy Traffic Analytics to Vercel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build SDK
+        run: |
+          cd packages/fhevm-sdk
+          npm run build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_TRAFFIC_PROJECT_ID }}
+          working-directory: ./examples/traffic-analytics
+          vercel-args: '--prod'
+
+  update-deployment-status:
+    name: Update Deployment Status
+    runs-on: ubuntu-latest
+    needs: [deploy-nextjs-showcase, deploy-traffic-analytics]
+    steps:
+      - name: Deployment Success
+        run: |
+          echo "✅ All deployments completed successfully!"
+          echo "📦 Next.js Showcase: Deployed"
+          echo "🚦 Traffic Analytics: Deployed"
