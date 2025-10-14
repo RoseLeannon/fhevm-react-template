@@ -312,10 +312,9 @@ npm publish
 
 ## Resources
 
-- **Repository**: https://github.com/zama-ai/fhevm-react-template
+- **Repository**: [https://github.com/RoseLeannon/fhevm-react-template](https://github.com/RoseLeannon/fhevm-react-template)
 - **Documentation**: README.md files throughout project
-- **Live Demos**: Links in main README.md
-- **Video**: demo.mp4 in root directory
+- **Live Demo**: [https://traffic-aggregator.vercel.app/](https://traffic-aggregator.vercel.app/)
 
 ---
 
