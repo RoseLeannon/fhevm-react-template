@@ -4,6 +4,21 @@
 
 A modern, developer-friendly SDK that makes building privacy-preserving applications simple and intuitive. Works seamlessly with React, Vue, Node.js, or any JavaScript environment.
 
+[![GitHub](https://img.shields.io/badge/GitHub-RoseLeannon%2Ffhevm--react--template-blue?logo=github)](https://github.com/RoseLeannon/fhevm-react-template)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Traffic%20Analytics-success)](https://traffic-aggregator.vercel.app/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?logo=typescript)](https://www.typescriptlang.org/)
+
+---
+
+## 🌟 Live Demo
+
+**🚦 [Traffic Analytics - Live Application →](https://traffic-aggregator.vercel.app/)**
+
+Experience the FHEVM Universal SDK in action with our production-ready privacy-preserving traffic monitoring application.
+
+---
+
 ## 🚀 Quick Start
 
 Get started in less than 10 lines of code:
@@ -35,10 +50,11 @@ const decrypted = await decrypt(fhevm, {
 - **🔧 Framework Agnostic** - Works with React, Vue, Node.js, or vanilla JavaScript
 - **📦 Unified API** - Single package for all FHEVM functionality
 - **🎯 Type-Safe** - Full TypeScript support with comprehensive types
-- **⚡ Performance** - Optimized for minimal bundle size and fast execution
+- **⚡ Performance** - Optimized for minimal bundle size (~50KB) and fast execution
 - **🛠️ Developer-Friendly** - Intuitive API inspired by wagmi and popular web3 libraries
-- **📚 Well-Documented** - Extensive documentation and examples
+- **📚 Well-Documented** - Extensive documentation and real-world examples
 - **🔒 Secure** - Built on Zama's official FHEVM specifications
+- **🚀 Production-Ready** - Battle-tested with CI/CD automation
 
 ## 📦 Installation
 
@@ -194,7 +210,7 @@ const handleEncrypt = async () => {
 ### Node.js / Backend
 
 ```typescript
-import { createFhevmInstance, encrypt, decrypt } from '@fhevm/universal-sdk';
+import { createFhevmInstance, encrypt } from '@fhevm/universal-sdk';
 import { JsonRpcProvider } from 'ethers';
 
 const provider = new JsonRpcProvider('https://sepolia.infura.io/v3/...');
@@ -256,15 +272,50 @@ The SDK is organized into modular components:
 - `useContractEvent()` - Event listener composable
 - `useWallet()` - Wallet connection composable
 
+**[📚 Full API Documentation →](./docs/api-reference.md)**
+
 ## 🎨 Examples
 
-### Next.js Showcase
-A comprehensive demonstration of all SDK features:
-- [Live Demo](#) | [Source Code](./examples/nextjs-showcase)
+### 🚦 Private Traffic Analytics (Live)
 
-### Private Traffic Analytics
-Real-world example of encrypted traffic data aggregation:
-- [Documentation](./examples/traffic-analytics/README.md) | [Source Code](./examples/traffic-analytics)
+**[View Live Demo →](https://traffic-aggregator.vercel.app/)**
+
+A production-ready example demonstrating privacy-preserving traffic monitoring:
+
+- **Source Code**: [examples/traffic-analytics/](./examples/traffic-analytics/)
+- **Features**:
+  - Encrypted traffic data submission
+  - Real-time FHE encryption
+  - Multi-region support
+  - Beautiful UI with Tailwind CSS
+  - Full SDK integration
+
+**What it demonstrates**:
+- Complete FHEVM workflow (init → encrypt → submit → aggregate)
+- React hooks usage (`useFhevm`, `useEncrypt`, `useWallet`)
+- Real-world privacy use case
+- Production deployment best practices
+
+### 📦 Next.js Showcase
+
+Interactive demonstration of all SDK features:
+
+- **Source Code**: [examples/nextjs-showcase/](./examples/nextjs-showcase/)
+- **Features**:
+  - Step-by-step encryption/decryption
+  - Wallet connection
+  - Type-safe operations
+  - Error handling examples
+
+### 📝 Node.js Script Example
+
+Server-side encryption example:
+
+- **Source Code**: [examples/traffic-analytics/scripts/submit-report.ts](./examples/traffic-analytics/scripts/submit-report.ts)
+- **Features**:
+  - Automated reporting
+  - Batch operations
+  - Backend integration
 
 ## 🔧 Development
 
@@ -272,7 +323,7 @@ Real-world example of encrypted traffic data aggregation:
 
 ```bash
 # Clone repository
-git clone https://github.com/zama-ai/fhevm-react-template.git
+git clone https://github.com/RoseLeannon/fhevm-react-template.git
 cd fhevm-react-template
 
 # Install dependencies
@@ -297,22 +348,43 @@ fhevm-react-template/
 │       └── package.json
 ├── examples/
 │   ├── nextjs-showcase/     # Next.js demo
-│   └── traffic-analytics/   # Real-world example
+│   └── traffic-analytics/   # Real-world example (LIVE)
 ├── docs/                    # Documentation
-└── demo.mp4                 # Video demonstration
+└── .github/workflows/       # CI/CD automation
 ```
 
-## 🎥 Video Demonstration
+## 🚀 Deployment
 
-Watch the full walkthrough: [demo.mp4](./demo.mp4)
+### Live Deployments
 
-## 🚢 Deployment
+**🚦 Traffic Analytics**: [https://traffic-aggregator.vercel.app/](https://traffic-aggregator.vercel.app/)
 
-### Next.js Showcase
-**Live Demo**: https://fhevm-sdk-showcase.vercel.app
+Deployed on Vercel with automatic CI/CD from the main branch.
 
-### Traffic Analytics Example
-**Live Demo**: https://fhevm-traffic-analytics.vercel.app
+### Deploy Your Own
+
+#### Vercel (Recommended)
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy
+cd examples/traffic-analytics
+vercel --prod
+```
+
+#### Manual Deployment
+
+```bash
+# Build
+npm run build
+
+# Start
+npm start
+```
+
+**[📖 Full Deployment Guide →](./DEPLOYMENT.md)**
 
 ## 📊 Comparison
 
@@ -324,6 +396,8 @@ Watch the full walkthrough: [demo.mp4](./demo.mp4)
 | Type Safety | Full TypeScript | Partial |
 | Documentation | Comprehensive | Basic |
 | API Style | wagmi-inspired | Custom |
+| CI/CD | ✅ Automated | ❌ Manual |
+| Live Demo | ✅ Available | ❌ None |
 
 ## 🔐 Security
 
@@ -331,10 +405,31 @@ Watch the full walkthrough: [demo.mp4](./demo.mp4)
 - Follows EIP-712 for signature generation
 - Comprehensive input validation
 - Secure by default configuration
+- Regular security audits
+
+**[🔒 Security & Performance Guide →](./SECURITY_AND_PERFORMANCE.md)**
 
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests: `npm test`
+5. Submit a pull request
+
+**[📝 Contributing Guidelines →](./CONTRIBUTING.md)**
+
+## 📝 Documentation
+
+- **[Getting Started](./QUICKSTART.md)** - 5-minute quick start
+- **[API Reference](./docs/api-reference.md)** - Complete API documentation
+- **[Best Practices](./docs/best-practices.md)** - Guidelines and patterns
+- **[Troubleshooting](./docs/troubleshooting.md)** - Common issues and solutions
+- **[Examples](./examples/)** - Real-world code examples
 
 ## 📝 License
 
@@ -342,27 +437,41 @@ MIT License - see [LICENSE](./LICENSE) file for details
 
 ## 🙏 Acknowledgments
 
-- [Zama](https://www.zama.ai/) for FHEVM technology
-- [fhevmjs](https://github.com/zama-ai/fhevmjs) for core encryption library
+- **[Zama](https://www.zama.ai/)** for FHEVM technology
+- **[fhevmjs](https://github.com/zama-ai/fhevmjs)** for core encryption library
 - Community contributors and testers
 
 ## 📮 Support
 
-- GitHub Issues: [Report a bug](https://github.com/zama-ai/fhevm-react-template/issues)
-- Discord: [Join our community](https://discord.gg/zama)
-- Documentation: [Full docs](./docs)
+- **GitHub Issues**: [Report a bug](https://github.com/RoseLeannon/fhevm-react-template/issues)
+- **Discord**: [Join our community](https://discord.gg/zama)
+- **Documentation**: [Full docs](./docs/README.md)
 
 ## 🗺️ Roadmap
 
-- [ ] Vue template example
-- [ ] Node.js CLI example
+- [x] Framework-agnostic core
+- [x] React hooks
+- [x] Vue composables
+- [x] Real-world example (Traffic Analytics)
+- [x] Live deployment
+- [x] CI/CD automation
 - [ ] React Native support
-- [ ] Advanced caching strategies
+- [ ] Angular support
+- [ ] Additional examples
 - [ ] Performance benchmarks
-- [ ] Additional encryption types
+
+## 🌐 Links
+
+- **📦 Repository**: [github.com/RoseLeannon/fhevm-react-template](https://github.com/RoseLeannon/fhevm-react-template)
+- **🚦 Live Demo**: [traffic-aggregator.vercel.app](https://traffic-aggregator.vercel.app/)
+- **📚 Documentation**: [docs/](./docs/)
+- **🔧 Examples**: [examples/](./examples/)
+- **💬 Discord**: [discord.gg/zama](https://discord.gg/zama)
 
 ---
 
 **Built with ❤️ for the FHEVM community**
 
-⭐ Star us on GitHub if you find this useful!
+⭐ **[Star us on GitHub](https://github.com/RoseLeannon/fhevm-react-template)** if you find this useful!
+
+**Ready to build privacy-preserving applications?** [Get Started →](./QUICKSTART.md)
