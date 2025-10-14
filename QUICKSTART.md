@@ -176,19 +176,14 @@ console.log('Type:', decrypted.type);
 - **SDK Docs**: [packages/fhevm-sdk/README.md](./packages/fhevm-sdk/README.md)
 - **API Reference**: Inline JSDoc comments
 
-### 3. Try Live Demos
-- **Next.js Showcase**: https://fhevm-sdk-showcase.vercel.app
-- **Traffic Analytics**: https://fhevm-traffic-analytics.vercel.app
-
-### 4. Watch Video
-- **Demo Video**: [demo.mp4](./demo.mp4)
-- **Video Guide**: [DEMO_VIDEO.md](./DEMO_VIDEO.md)
+### 3. Try Live Demo
+- **🚦 Traffic Analytics**: [https://traffic-aggregator.vercel.app/](https://traffic-aggregator.vercel.app/)
 
 ## 🔧 Development Setup
 
 ```bash
 # Clone repository
-git clone https://github.com/zama-ai/fhevm-react-template.git
+git clone https://github.com/RoseLeannon/fhevm-react-template.git
 cd fhevm-react-template
 
 # Install dependencies
@@ -227,7 +222,7 @@ Open http://localhost:3000
 
 ## 🆘 Getting Help
 
-- **GitHub Issues**: [Report bugs](https://github.com/zama-ai/fhevm-react-template/issues)
+- **GitHub Issues**: [Report bugs](https://github.com/RoseLeannon/fhevm-react-template/issues)
 - **Discord**: [Join community](https://discord.gg/zama)
 - **Documentation**: [Full docs](./README.md)
 
