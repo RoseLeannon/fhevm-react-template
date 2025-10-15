@@ -4,27 +4,28 @@ This document provides deployment instructions and links to live demos.
 
 ## Live Deployments
 
-### Next.js Showcase Application
-**URL**: https://fhevm-sdk-showcase.vercel.app
+### 🚦 Traffic Analytics Application
+**URL**: https://traffic-aggregator.vercel.app/
 **Status**: ✅ Live
 **Features**:
-- Interactive encryption/decryption demo
-- Wallet connection
-- Real-time FHEVM operations
-- Responsive design
-
-### Traffic Analytics Example
-**URL**: https://fhevm-traffic-analytics.vercel.app
-**Status**: ✅ Live
-**Features**:
-- Private traffic reporting
+- Private traffic reporting with FHE encryption
 - Encrypted data aggregation
 - Multi-region support
-- Admin dashboard
+- Real-time FHEVM SDK demonstration
+- Production-ready implementation
+
+### Repository
+**URL**: https://github.com/RoseLeannon/fhevm-react-template
+**Status**: ✅ Active
+**Branches**:
+- `main` - Production branch (auto-deploys to Vercel)
+- `develop` - Development branch
+
+---
 
 ## Deployment Instructions
 
-### Next.js Showcase
+### Traffic Analytics Application
 
 #### Vercel Deployment (Recommended)
 
@@ -35,13 +36,13 @@ This document provides deployment instructions and links to live demos.
 
 2. **Deploy**
    ```bash
-   cd examples/nextjs-showcase
+   cd examples/traffic-analytics
    vercel --prod
    ```
 
 3. **Environment Variables**
    Set these in Vercel dashboard:
-   ```
+   ```env
    NEXT_PUBLIC_CONTRACT_ADDRESS=0x...
    NEXT_PUBLIC_CHAIN_ID=11155111
    NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/...
@@ -51,7 +52,7 @@ This document provides deployment instructions and links to live demos.
 
 1. **Build**
    ```bash
-   cd examples/nextjs-showcase
+   cd examples/traffic-analytics
    npm run build
    ```
 
@@ -60,9 +61,9 @@ This document provides deployment instructions and links to live demos.
    - Set Node.js version to 18+
    - Configure environment variables
 
-### Traffic Analytics Example
+### Next.js Showcase
 
-Same deployment process as Next.js Showcase.
+Same deployment process as Traffic Analytics application.
 
 ### SDK Package (npm)
 
@@ -83,6 +84,8 @@ Same deployment process as Next.js Showcase.
    ```bash
    npm publish
    ```
+
+---
 
 ## Smart Contract Deployment
 
@@ -107,6 +110,8 @@ Same deployment process as Next.js Showcase.
 
 4. **Update Frontend**
    Update `NEXT_PUBLIC_CONTRACT_ADDRESS` in Vercel
+
+---
 
 ## Environment Variables
 
@@ -137,35 +142,22 @@ PRIVATE_KEY=0x...
 ETHERSCAN_API_KEY=YOUR_KEY
 ```
 
+---
+
 ## CI/CD Pipeline
 
 ### GitHub Actions
 
 Automatic deployment on push to main:
 
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy
-on:
-  push:
-    branches: [main]
+The repository includes automated workflows:
+- **CI**: Tests and builds on every push/PR
+- **Deploy**: Auto-deploys to Vercel on push to main
+- **Publish**: Publishes SDK to npm on release
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install
-      - run: npm run build
-      - uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-```
+Check `.github/workflows/` for configuration.
+
+---
 
 ## Performance Optimization
 
@@ -191,19 +183,23 @@ jobs:
    - Cache static assets
    - Optimize images
 
+---
+
 ## Monitoring
 
 ### Analytics
 
 - **Vercel Analytics**: Enabled by default
 - **Custom Events**: Track encryption/decryption
-- **Error Tracking**: Sentry integration
+- **Error Tracking**: Consider Sentry integration
 
 ### Performance
 
 - **Core Web Vitals**: Monitor LCP, FID, CLS
 - **Bundle Analysis**: Use `@next/bundle-analyzer`
 - **Lighthouse Scores**: Target 90+ in all categories
+
+---
 
 ## Security
 
@@ -244,6 +240,8 @@ module.exports = {
 };
 ```
 
+---
+
 ## Troubleshooting
 
 ### Common Issues
@@ -263,11 +261,15 @@ module.exports = {
 - Check network (Sepolia vs Mainnet)
 - Ensure contract is verified on Etherscan
 
+---
+
 ## Support
 
-- **GitHub Issues**: Report deployment issues
-- **Discord**: Get help from community
-- **Documentation**: Check full docs
+- **GitHub Issues**: [Report deployment issues](https://github.com/RoseLeannon/fhevm-react-template/issues)
+- **Discord**: [Get help from community](https://discord.gg/zama)
+- **Documentation**: [Check full docs](./docs/README.md)
+
+---
 
 ## Deployment Checklist
 
@@ -284,5 +286,13 @@ module.exports = {
 
 ---
 
+## Live Application Links
+
+**🚦 Traffic Analytics**: [https://traffic-aggregator.vercel.app/](https://traffic-aggregator.vercel.app/)
+
+**📦 Repository**: [https://github.com/RoseLeannon/fhevm-react-template](https://github.com/RoseLeannon/fhevm-react-template)
+
+---
+
 **Last Updated**: January 2025
-**Deployment Status**: All systems operational ✅
+**Deployment Status**: ✅ All systems operational
