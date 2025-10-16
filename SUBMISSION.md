@@ -19,7 +19,6 @@ A complete, framework-agnostic SDK that wraps all FHEVM functionality:
 
 ### 2. Next.js Showcase Application
 **Location**: `examples/nextjs-showcase/`
-**Live Demo**: https://fhevm-sdk-showcase.vercel.app
 
 Interactive demonstration featuring:
 - Real-time encryption/decryption
@@ -29,7 +28,7 @@ Interactive demonstration featuring:
 
 ### 3. Real-World Example: Traffic Analytics
 **Location**: `examples/traffic-analytics/`
-**Live Demo**: https://fhevm-traffic-analytics.vercel.app
+**Live Demo**: [https://traffic-aggregator.vercel.app/](https://traffic-aggregator.vercel.app/)
 
 Production-ready application demonstrating:
 - Private traffic data collection
@@ -38,11 +37,9 @@ Production-ready application demonstrating:
 - Full FHEVM workflow
 
 ### 4. Video Demonstration
-**Location**: `demo.mp4` (root directory)
-**Documentation**: `DEMO_VIDEO.md`
-**Duration**: ~20 minutes
+**Status**: Not available
 
-Comprehensive walkthrough covering:
+Video demonstration planned to cover:
 - Quick start (< 10 lines of code)
 - Framework integrations (React, Vue, Node.js)
 - Real-world use case
@@ -232,14 +229,13 @@ Covers complete FHEVM workflow:
 
 ## 🚀 Deployment Links
 
-### Live Demos
-- **Next.js Showcase**: https://fhevm-sdk-showcase.vercel.app
-- **Traffic Analytics**: https://fhevm-traffic-analytics.vercel.app
+### Live Demo
+- **🚦 Traffic Analytics**: [https://traffic-aggregator.vercel.app/](https://traffic-aggregator.vercel.app/)
 
 ### GitHub Repository
-- **URL**: https://github.com/zama-ai/fhevm-react-template
+- **URL**: [https://github.com/RoseLeannon/fhevm-react-template](https://github.com/RoseLeannon/fhevm-react-template)
 - **Branch**: main
-- **Commits**: Forked from original template
+- **Status**: ✅ Active
 
 ### npm Package (Ready to Publish)
 - **Name**: `@fhevm/universal-sdk`
@@ -345,9 +341,9 @@ Inspired by community feedback:
 
 ## 📞 Contact
 
-- **GitHub**: https://github.com/zama-ai/fhevm-react-template
-- **Issues**: https://github.com/zama-ai/fhevm-react-template/issues
-- **Discord**: https://discord.gg/zama
+- **GitHub**: [https://github.com/RoseLeannon/fhevm-react-template](https://github.com/RoseLeannon/fhevm-react-template)
+- **Issues**: [https://github.com/RoseLeannon/fhevm-react-template/issues](https://github.com/RoseLeannon/fhevm-react-template/issues)
+- **Discord**: [https://discord.gg/zama](https://discord.gg/zama)
 
 ---
 
