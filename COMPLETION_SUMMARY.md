@@ -272,6 +272,11 @@ D:\fhevm-react-template\
 5. ⏳ Fork 原始仓库
 6. ⏳ 提交竞赛
 
+### 视频说明 | Video Notes
+**文件**: demo.mp4 (仓库根目录)
+**观看方式**: 从仓库下载 demo.mp4 文件后本地观看
+**内容**: 完整的 SDK 演示、Traffic Analytics 案例展示、框架集成等
+
 ### 可选改进 | Optional Improvements
 - [ ] 添加更多示例
 - [ ] Vue 完整模板
