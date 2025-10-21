@@ -37,14 +37,17 @@ Production-ready application demonstrating:
 - Full FHEVM workflow
 
 ### 4. Video Demonstration
-**Status**: Not available
+**File**: `demo.mp4` (root directory)
+**How to watch**: Download the demo.mp4 file from the repository to view the demonstration locally
 
-Video demonstration planned to cover:
+Comprehensive video walkthrough covering:
 - Quick start (< 10 lines of code)
+- Complete SDK setup and initialization
+- Real-time encryption and decryption operations
 - Framework integrations (React, Vue, Node.js)
-- Real-world use case
-- Design decisions
-- Live deployment
+- Traffic Analytics real-world use case
+- Design decisions and architecture
+- Live deployment and production usage
 
 ### 5. Documentation
 **Main README**: `README.md`
