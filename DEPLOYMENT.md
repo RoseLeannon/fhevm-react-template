@@ -21,6 +21,15 @@ This document provides deployment instructions and links to live demos.
 - `main` - Production branch (auto-deploys to Vercel)
 - `develop` - Development branch
 
+### Video Demonstration
+**File**: `demo.mp4` (in repository root)
+**How to watch**: Download the demo.mp4 file from the repository to view locally
+**Content**:
+- Complete SDK walkthrough
+- Traffic Analytics demo
+- Deployment process
+- Framework integrations
+
 ---
 
 ## Deployment Instructions
