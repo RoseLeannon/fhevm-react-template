@@ -1,8 +1,8 @@
 # Private Traffic Aggregator
 
-🚦 **Confidential Traffic Data Aggregation using Zama FHE Encryption**
+🚦 **Confidential Traffic Data Aggregation using FHEVM Encryption**
 
-A revolutionary blockchain-based system for collecting and analyzing traffic data while preserving privacy through Fully Homomorphic Encryption (FHE).
+A revolutionary blockchain-based system for collecting and analyzing traffic data while preserving privacy through Fully Homomorphic Encryption (FHE). Built with Next.js 14 and the FHEVM SDK.
 
 ## 🌟 Project Overview
 
@@ -23,17 +23,15 @@ Private Traffic Aggregator enables cities and transportation authorities to coll
 - 🔍 **Transparent Verification**: Blockchain-based system ensures data integrity and auditability
 - 🏛️ **Decentralized Governance**: Admin controls for region management and reporter authorization
 
-## 🌐 Live Application
+## 🌐 Application
 
-**Website**: [https://private-traffic-aggregator.vercel.app/](https://private-traffic-aggregator.vercel.app/)
-
- 
+Built with Next.js 14 and FHEVM SDK for production-ready deployment.
 
 ## 📋 Smart Contract Information
 
 **Contract Address**: `0xfc3bE20Ff45d25d85FBCAb90F414E758286963DC`
 
-**Network**: Zama Devnet
+**Network**: FHEVM Devnet
 **Chain ID**: 8009
 **RPC URL**: https://devnet.zama.ai/
 
@@ -137,12 +135,100 @@ This project represents a significant step forward in privacy-preserving smart c
 
 ## 💡 Technology Stack
 
-- **Frontend**: Vanilla HTML/CSS/JavaScript for maximum compatibility
-- **Blockchain**: Ethereum-compatible networks with Zama FHE support
-- **Privacy**: Zama Fully Homomorphic Encryption for data protection
-- **Web3**: Ethers.js for seamless blockchain integration
-- **Hosting**: Vercel for reliable global deployment
+- **Frontend**: Next.js 14 with App Router, React 18, TypeScript
+- **Styling**: Tailwind CSS with glassmorphism design
+- **Blockchain**: FHEVM (Fully Homomorphic Encryption Virtual Machine)
+- **Privacy**: FHEVM SDK for encrypted smart contract interactions
+- **Web3**: Ethers.js v6 for blockchain connectivity
+- **State Management**: React Hooks for efficient state handling
+- **Type Safety**: Full TypeScript implementation
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ installed
+- MetaMask or compatible Web3 wallet
+- Access to FHEVM Devnet
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+### Configuration
+
+Update contract configuration in `lib/constants.ts`:
+
+```typescript
+export const CONTRACT_CONFIG: NetworkConfig = {
+  contractAddress: "0xfc3bE20Ff45d25d85FBCAb90F414E758286963DC",
+  networkName: "FHEVM Devnet",
+  chainId: 8009,
+  rpcUrl: "https://devnet.zama.ai/"
+};
+```
+
+## 📁 Project Structure
+
+```
+PrivateTrafficAggregator/
+├── app/
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Main application
+│   └── globals.css         # Global styles
+├── components/
+│   ├── ConnectionStatus.tsx
+│   ├── NetworkInfo.tsx
+│   ├── StatusBar.tsx
+│   ├── RegionCard.tsx
+│   ├── RegionList.tsx
+│   ├── ReportForm.tsx
+│   └── AdminControls.tsx
+├── hooks/
+│   ├── useWallet.ts        # Wallet connection
+│   ├── useTrafficContract.ts  # Contract interactions
+│   ├── useRegions.ts       # Region management
+│   └── useCycleInfo.ts     # Cycle information
+├── lib/
+│   ├── abi.ts              # Contract ABI
+│   ├── constants.ts        # Configuration
+│   └── utils.ts            # Helper functions
+└── types/
+    ├── index.ts            # Type definitions
+    └── window.d.ts         # Window extensions
+```
+
+## 🔧 Development
+
+### Type Safety
+
+All components are fully typed with TypeScript for enhanced developer experience and runtime safety.
+
+### Custom Hooks
+
+- **useWallet**: Manages wallet connection and contract initialization
+- **useTrafficContract**: Handles all contract interactions
+- **useRegions**: Manages region data and statistics
+- **useCycleInfo**: Tracks cycle information and updates
+
+### Component Architecture
+
+- Modular component design for maintainability
+- Separation of concerns between UI and business logic
+- Reusable components with prop-based configuration
 
 ---
 
-*Built with privacy-first principles using Zama FHE technology for a more secure and transparent future of urban mobility.*
+*Built with privacy-first principles using FHEVM technology for a more secure and transparent future of urban mobility.*
