@@ -289,46 +289,77 @@ The SDK is organized into modular components:
 
 ## 🎨 Examples
 
-### 🚦 Private Traffic Analytics (Live)
+We provide three comprehensive example applications demonstrating different aspects of the FHEVM Universal SDK:
 
-**[View Live Demo →](https://traffic-aggregator.vercel.app/)**
+### 📦 Next.js Showcase - Complete SDK Feature Demonstration
 
-A production-ready example demonstrating privacy-preserving traffic monitoring:
+**Comprehensive interactive demonstration of all SDK capabilities**
+
+- **Source Code**: [examples/nextjs-showcase/](./examples/nextjs-showcase/)
+- **Purpose**: Educational showcase of SDK features and best practices
+- **Features**:
+  - Complete FHE provider architecture with context management
+  - Interactive encryption/decryption demos for all data types
+  - Homomorphic computation demonstrations
+  - Key management utilities
+  - Reusable UI components (Button, Input, Card)
+  - Real-world use case examples (Banking, Medical Records)
+  - Full API route implementations
+  - Custom React hooks for FHE operations
+  - TypeScript type safety throughout
+
+**What it demonstrates**:
+- SDK initialization and configuration
+- Client-side and server-side FHE operations
+- React component patterns for FHE apps
+- API route design for FHE endpoints
+- Security best practices
+- Input validation and error handling
+
+### 🚦 Private Traffic Analytics - Production-Ready Application
+
+**Real-world privacy-preserving traffic monitoring system**
 
 - **Source Code**: [examples/traffic-analytics/](./examples/traffic-analytics/)
+- **Purpose**: Production-quality example with actual use case
 - **Features**:
-  - Encrypted traffic data submission
-  - Real-time FHE encryption
-  - Multi-region support
-  - Beautiful UI with Tailwind CSS
-  - Full SDK integration
+  - Encrypted traffic data submission (congestion, vehicles, speed)
+  - Real-time FHE encryption using SDK hooks
+  - Multi-region traffic monitoring
+  - Beautiful dark-themed UI with glassmorphism
+  - Full SDK integration with React hooks
+  - Smart contract interaction examples
 
 **What it demonstrates**:
 - Complete FHEVM workflow (init → encrypt → submit → aggregate)
-- React hooks usage (`useFhevm`, `useEncrypt`, `useWallet`)
-- Real-world privacy use case
-- Production deployment best practices
+- React hooks usage (`useFhevm`, `useEncrypt`, `useContract`, `useWallet`)
+- Real-world privacy use case implementation
+- Professional UI/UX for FHE applications
+- Form validation and user feedback
 
-### 📦 Next.js Showcase
+### 🚗 Private Traffic Aggregator - Advanced React Application
 
-Interactive demonstration of all SDK features:
+**Enhanced traffic analytics with admin controls and regional management**
 
-- **Source Code**: [examples/nextjs-showcase/](./examples/nextjs-showcase/)
+- **Source Code**: [examples/PrivateTrafficAggregator/](./examples/PrivateTrafficAggregator/)
+- **Purpose**: Advanced example with administrative features
 - **Features**:
-  - Step-by-step encryption/decryption
-  - Wallet connection
-  - Type-safe operations
-  - Error handling examples
+  - Complete traffic reporting system with FHE
+  - Admin panel for region and reporter management
+  - Real-time cycle information and countdowns
+  - Regional statistics and analytics
+  - Wallet connection and network detection
+  - Custom hooks for contract interactions
+  - Modular component architecture
 
-### 📝 Node.js Script Example
-
-Server-side encryption example:
-
-- **Source Code**: [examples/traffic-analytics/scripts/submit-report.ts](./examples/traffic-analytics/scripts/submit-report.ts)
-- **Features**:
-  - Automated reporting
-  - Batch operations
-  - Backend integration
+**What it demonstrates**:
+- Advanced contract interaction patterns
+- Admin role management
+- Complex state management with React hooks
+- Real-time data updates
+- Custom hook development (`useTrafficContract`, `useRegions`, `useCycleInfo`)
+- Component composition patterns
+- TypeScript interfaces for contract types
 
 ## 🔧 Development
 
@@ -355,15 +386,48 @@ npm test
 ```
 fhevm-react-template/
 ├── packages/
-│   └── fhevm-sdk/           # Universal SDK package
+│   └── fhevm-sdk/                    # Universal SDK package
 │       ├── src/
-│       ├── dist/
+│       │   ├── core/                 # Core FHEVM functionality
+│       │   │   ├── instance.ts       # Instance management
+│       │   │   ├── encryption.ts     # Encryption utilities
+│       │   │   ├── decryption.ts     # Decryption utilities
+│       │   │   └── contract.ts       # Contract interaction
+│       │   ├── types/                # TypeScript definitions
+│       │   ├── utils/                # Utility functions
+│       │   ├── react.ts              # React hooks
+│       │   ├── vue.ts                # Vue composables
+│       │   └── index.ts              # Main entry point
+│       ├── dist/                     # Compiled output
 │       └── package.json
 ├── examples/
-│   ├── nextjs-showcase/     # Next.js demo
-│   └── traffic-analytics/   # Real-world example (LIVE)
-├── docs/                    # Documentation
-└── .github/workflows/       # CI/CD automation
+│   ├── nextjs-showcase/              # Complete SDK feature showcase
+│   │   ├── app/                      # Next.js App Router
+│   │   │   ├── api/                  # API routes for FHE operations
+│   │   │   ├── page.tsx              # Main page
+│   │   │   └── layout.tsx            # Root layout
+│   │   ├── components/
+│   │   │   ├── ui/                   # Reusable UI components
+│   │   │   ├── fhe/                  # FHE-specific components
+│   │   │   └── examples/             # Use case examples
+│   │   ├── lib/
+│   │   │   ├── fhe/                  # FHE utilities
+│   │   │   └── utils/                # Helper functions
+│   │   ├── hooks/                    # Custom React hooks
+│   │   └── types/                    # Type definitions
+│   ├── traffic-analytics/            # Production-ready traffic monitoring
+│   │   ├── app/                      # Next.js application
+│   │   ├── contracts/                # Smart contract
+│   │   ├── lib/                      # Utilities and ABI
+│   │   └── scripts/                  # Automation scripts
+│   └── PrivateTrafficAggregator/     # Advanced admin-enabled app
+│       ├── app/                      # Next.js application
+│       ├── components/               # React components
+│       ├── hooks/                    # Custom hooks
+│       ├── lib/                      # Contract ABI and constants
+│       └── types/                    # TypeScript types
+├── docs/                             # Documentation
+└── .github/workflows/                # CI/CD automation
 ```
 
 ## 🚀 Deployment
