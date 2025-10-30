@@ -1,0 +1,17 @@
+{
+  "name": "private-traffic-analytics",
+  "version": "1.0.0",
+  "description": "Private Traffic Data Aggregation using Zama FHE encryption",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "npx http-server public -p 3000 -c-1 --cors",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["blockchain", "fhe", "privacy", "traffic", "zama"],
+  "author": "Private Traffic Analytics",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
