@@ -19,7 +19,7 @@ Experience the FHEVM Universal SDK in action with our production-ready privacy-p
 
 ## 🎥 Video Demonstration
 
-**📹 [Download demo.mp4 to watch the full demonstration →](./demo.mp4)**
+**📹 [Download demo.mp4 to watch the full demonstration ]**
 
 A comprehensive video walkthrough showcasing:
 - Complete SDK setup and initialization
